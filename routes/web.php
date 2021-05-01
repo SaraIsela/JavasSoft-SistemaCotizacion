@@ -11,6 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use Illuminate\Support\Facades\Route;
+
+ Route::get('/', function () {
+     return view('welcome');
+ });
+// Route::get('/', function () {
+//     return view('RegistroUsuario');
+// });
+
+Route::get('RegistrarUsuario','RegistrarUsuarioController@index');
+Route::post('RegistrarUsuario','RegistrarUsuarioController@store');
