@@ -11,6 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+use Illuminate\Support\Facades\Route;
+
+ Route::get('/', function () {
+     return view('layout');
+ });
+// Route::get('/', function () {
+//     return view('RegistroUsuario');
+// });
+Route::get('layout','NombreUsuario@index');
+Route::get('RegistrarUsuario','RegistrarUsuarioController@index');
+Route::post('RegistrarUsuario','RegistrarUsuarioController@store');
